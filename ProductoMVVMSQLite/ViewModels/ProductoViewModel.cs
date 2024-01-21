@@ -46,8 +46,6 @@ namespace ProductoMVVMSQLite.ViewModels
                     ProductoSeleccionado = null;
                     ActualizarListaProductos();
                 }
-              
-
             });
 
        public ICommand BorrarProducto =>
@@ -59,14 +57,6 @@ namespace ProductoMVVMSQLite.ViewModels
                     Console.WriteLine("Borrando");
                     ProductoSeleccionado = null;
                     ActualizarListaProductos();
-
-                    var currentPage = App.Current.MainPage;
-
-                    if (currentPage is ContentPage contentPage)
-                    {
-                        App.Current.MainPage = contentPage;
-                    }
-
                 }
             });
     }
