@@ -60,6 +60,13 @@
                                     Command="{Binding BindingContext.EditarProducto, 
                                     Source={x:Reference listaProductos}}" 
                                     CommandParameter="{Binding .}" />
+                                <SwipeItem 
+                                     IconImageSource="eye.svg"
+                                     BackgroundColor="LightBlue"
+                                     Text="Detalles" 
+                                     Command="{Binding BindingContext.Details, 
+                                     Source={x:Reference listaProductos}}" 
+                                     CommandParameter="{Binding .}" />
                             </SwipeItems>
                         </SwipeView.RightItems>
 

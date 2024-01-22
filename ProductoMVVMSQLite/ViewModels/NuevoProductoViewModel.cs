@@ -59,7 +59,8 @@ namespace ProductoMVVMSQLite.ViewModels
                     ProductoEncontrado.Nombre = Nombre;
                     ProductoEncontrado.Cantidad = Int32.Parse(Cantidad);
                     ProductoEncontrado.Descripcion = Descripcion;
-                    ProductoEncontrado.Imagen = imagen;
+                    ProductoEncontrado.Imagen = (imagen == null && ProductoEncontrado.Imagen != null)? 
+                    ProductoEncontrado.Imagen : imagen;
                     App.productoRepository.Update(ProductoEncontrado);
 
                 }

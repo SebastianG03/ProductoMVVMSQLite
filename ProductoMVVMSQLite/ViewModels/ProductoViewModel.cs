@@ -1,14 +1,9 @@
-﻿using ProductoMVVMSQLite.Models;
+﻿using Microsoft.Maui.Controls.Platform;
+using ProductoMVVMSQLite.Models;
 using ProductoMVVMSQLite.Utils;
 using ProductoMVVMSQLite.Views;
 using PropertyChanged;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ProductoMVVMSQLite.ViewModels
@@ -59,5 +54,14 @@ namespace ProductoMVVMSQLite.ViewModels
                     ActualizarListaProductos();
                 }
             });
+
+        public ICommand Details =>
+            new Command(async () =>
+            {
+                String message = String.Concat("Descripción: ", ProductoSeleccionado.Descripcion, "\n" ,
+                    "Cantidad: ", ProductoSeleccionado.Cantidad);
+                await App.Current.MainPage.DisplayAlert(ProductoSeleccionado.Nombre, message, "Ok");
+            });
+
     }
 }
